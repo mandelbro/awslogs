@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+require 'cflogsearch'  # Make sure to include your gem's library here
+
+class CflogsearchCLI < Thor
+  desc "aws_bucket_name", "Search logs in AWS Cloudfront S3 bucket"
+  option :start_date, required: true, type: :string
+  option :end_date, required: true, type: :string
+  option :query, required: true, type: :string
+
+  def aws_bucket_name(aws_bucket_name)
+    # Your logic here to handle the AWS bucket name, start date, end date, and query string
+    puts "Searching logs in #{aws_bucket_name} from #{options[:start_date]} to #{options[:end_date]} with query: #{options[:query]}"
+  end
+end
+
+CflogsearchCLI.start(ARGV)
