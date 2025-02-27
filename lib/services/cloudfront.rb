@@ -4,8 +4,8 @@ require "fileutils"
 
 module Awslogs
   class Cloudfront < Base
-    def initialize(local_folder: "~/.awslogs/cloudfront/logs", **args)
-      super(local_folder: local_folder, **args)
+    def initialize(output_folder: "~/.awslogs/cloudfront/logs", **args)
+      super(output_folder: output_folder, **args)
     end
 
     def download_logs(since:, until: "now", query: nil)
