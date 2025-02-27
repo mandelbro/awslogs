@@ -3,6 +3,8 @@ require "bundler/setup"
 require "simplecov"
 require "awslogs"
 require "pry"
+require "aws-sdk-s3"
+
 
 # Require all necessary files from the lib directory
 Dir[File.join(__dir__, "..", "lib", "**", "*")].each do |file|

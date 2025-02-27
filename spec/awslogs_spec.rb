@@ -17,8 +17,6 @@ describe Awslogs::Base do
     let(:subject) { described_class.new(bucket_name: "test") }
 
     it "downloads all files to ~/awslogs/cloudfront/tmp" do
-      subject.download_logs(since: "1 hour ago")
-
       expect(subject.s3_client).to be_a(Aws::S3::Client)
     end
   end

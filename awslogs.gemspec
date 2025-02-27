@@ -22,6 +22,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thor", "~> 1.3"
   spec.add_dependency "aws-sdk-s3", "~> 1.182"
   spec.add_dependency "logger", "~> 1.6"
+  spec.add_dependency "nokogiri", "~> 1.18"
+  spec.add_dependency "ostruct", "~> 0.6"
 
   # Development dependencies (for testing, etc.)
   spec.add_development_dependency "bundler", "~> 2.6"
