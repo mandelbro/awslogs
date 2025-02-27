@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require "thor"
+require "awslogs"
+
+module Awslogs
+  class CLI < Thor
+    def self.exit_on_failure?
+      true
+    end
+
+    desc "cloudfront BUCKET_NAME", "Search logs in AWS Cloudfront S3 bucket"
+    option :since, required: true, type: :string
+    option :until, default: "now", type: :string
+    option :query, required: false, type: :string
+
+    def cloudfront(bucket_name)
+      # Your logic here to handle the AWS bucket name, start date, end date, and query string
+      puts "Searching logs in #{bucket_name} since #{options[:since]} until #{options[:until]} with query: #{options[:query]}"
+      # do the cloudfront 🪩💃🕺
+    end
+  end
+end
+
+Awslogs::CLI.start(ARGV) if __FILE__ == $0
